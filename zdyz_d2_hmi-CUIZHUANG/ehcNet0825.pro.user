@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.11.1, 2026-11-17T17:21:27. -->
+<!-- Written by QtCreator 4.11.1, 2026-11-17T19:05:29. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -241,20 +241,20 @@
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">RemoteLinux.DirectUploadStep</value>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedFiles">
-       <value type="QString">/home/vmuser/workspace/work/build-hmi-cuizhuang/HMI</value>
-       <value type="QString">/home/vmuser/workspace/work/build-hmi/HMI</value>
-       <value type="QString">/home/vmuser/workspace/work/build-hmi-cuizhuang/HMI</value>
-       <value type="QString">/home/vmuser/workspace/work/build-hmi/HMI</value>
        <value type="QString">/home/vmuser/workspace/work/build-ehcNet0825-rk3568-Debug/HMI</value>
+       <value type="QString">/home/vmuser/workspace/work/build-hmi/HMI</value>
+       <value type="QString">/home/vmuser/workspace/work/build-hmi-cuizhuang/HMI</value>
+       <value type="QString">/home/vmuser/workspace/work/build-hmi/HMI</value>
+       <value type="QString">/home/vmuser/workspace/work/build-hmi-cuizhuang/HMI</value>
        <value type="QString">/home/vmuser/workspace/work/build-hmi-cuizhuang/HMI</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedHosts">
-       <value type="QString">192.168.134.50</value>
        <value type="QString">10.13.200.25</value>
        <value type="QString">10.31.200.125</value>
-       <value type="QString">10.31.200.125</value>
-       <value type="QString">10.13.200.25</value>
        <value type="QString">10.31.110.11</value>
+       <value type="QString">10.13.200.25</value>
+       <value type="QString">10.31.200.125</value>
+       <value type="QString">192.168.134.50</value>
       </valuelist>
       <valuelist type="QVariantList" key="ProjectExplorer.RunConfiguration.LastDeployedRemotePaths">
        <value type="QString">/userdata/bin</value>
@@ -275,20 +275,20 @@
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.IgnoreMissingFiles">false</value>
       <value type="bool" key="RemoteLinux.GenericDirectUploadStep.Incremental">true</value>
       <valuelist type="QVariantList" key="RemoteLinux.LastDeployedLocalTimes">
-       <value type="QDateTime">2026-10-25T23:31:14.000</value>
+       <value type="QDateTime">2026-09-17T01:08:11.000</value>
+       <value type="QDateTime">2026-10-14T20:13:33.000</value>
+       <value type="QDateTime">2026-11-17T18:54:24.000</value>
        <value type="QDateTime">2026-09-18T02:01:32.000</value>
        <value type="QDateTime">2026-10-15T18:42:11.000</value>
-       <value type="QDateTime">2026-10-14T20:13:33.000</value>
-       <value type="QDateTime">2026-09-17T01:08:11.000</value>
        <value type="QDateTime">2026-10-25T23:31:14.000</value>
       </valuelist>
       <valuelist type="QVariantList" key="RemoteLinux.LastDeployedRemoteTimes">
-       <value type="QDateTime">2026-10-25T23:31:25.000</value>
+       <value type="QDateTime">2025-09-10T07:08:36.000</value>
+       <value type="QDateTime">2025-10-06T19:23:01.000</value>
+       <value type="QDateTime">2026-11-16T10:23:48.000</value>
        <value type="QDateTime">2025-09-11T06:59:34.000</value>
        <value type="QDateTime">2025-10-07T17:51:19.000</value>
-       <value type="QDateTime">2025-10-06T19:23:01.000</value>
-       <value type="QDateTime">2025-09-10T07:08:36.000</value>
-       <value type="QDateTime">2026-11-15T11:09:05.000</value>
+       <value type="QDateTime">2026-10-25T23:31:25.000</value>
       </valuelist>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">3</value>

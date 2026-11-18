@@ -205,6 +205,36 @@ void CmdManager::insert_msg(QString &msg)
     m_semaphore->release();
 }
 
+void CmdManager::insert_action_info_msg(QString &msg)
+{
+    bool replaced = false;
+    int qsize = 0;
+    m_mutex->lock();
+    for (int i = m_cmd_buf.size() - 1; i >= 0; --i) {
+        if (m_cmd_buf.at(i).startsWith(QStringLiteral("action action_info"))) {
+            m_cmd_buf[i] = msg;
+            replaced = true;
+            break;
+        }
+    }
+    if (!replaced)
+        m_cmd_buf.push_back(msg);
+    qsize = m_cmd_buf.size();
+    m_mutex->unlock();
+    if (!replaced)
+        m_semaphore->release();
+
+    static int s_action_mqtt_cnt = 0;
+    static int s_action_coalesce_cnt = 0;
+    ++s_action_mqtt_cnt;
+    if (replaced)
+        ++s_action_coalesce_cnt;
+    if ((s_action_mqtt_cnt % 20) == 1) {
+        TLOG_INFO("action_info mqtt cnt=%d coalesce=%d qsize=%d msg=%s",
+                  s_action_mqtt_cnt, s_action_coalesce_cnt, qsize, msg.toUtf8().data());
+    }
+}
+
 void CmdManager::cb_keep_live_count()
 {
     system("kill -9 $(pidof ffmpeg)");
@@ -425,6 +455,7 @@ void CmdManager::json_format_switch(QString type, const QByteArray &json_data){
         QString temp_value;
         int value;
         bool should_sync_xml = false;
+        bool need_reload_action = false;
 //            for(QJsonObject::const_iterator it_basic = it.value().toObject().constBegin(); it_basic != it.value().toObject().constEnd(); it_basic++)
         for(QJsonObject::const_iterator it_basic = param.constBegin(); it_basic != param.constEnd(); it_basic++)
         {
@@ -477,6 +508,7 @@ void CmdManager::json_format_switch(QString type, const QByteArray &json_data){
                         if(category_name == "system" && tab_name == "system_para")
                         {
                             if(parameter_name == "hydraulic_supporter_type"){
+                                need_reload_action = true;
                                 emit CommAcsSocketThread::getInstance()->cmdManager->signal_update_sensor_data(mainPage::View_SUP_TYPE);
                             } else if (parameter_name == "minAddress") {
                                 CommAcsSocketThread::getInstance()->cmdManager->m_min_address = new_value.toInt();
@@ -496,7 +528,8 @@ void CmdManager::json_format_switch(QString type, const QByteArray &json_data){
 
         if(new_value != "none" || should_sync_xml){
             para->update_sync("/userdata/config/hmi_files/parameters.xml");
-            ActionRegister::getInstance()->reload();
+            if(need_reload_action)
+                ActionRegister::getInstance()->reload();
         }
 
     } else if (type == TOPIC_REBOOT){
@@ -719,8 +752,7 @@ void CmdManager::json_format_switch(QString type, const QByteArray &json_data){
                     buf += array.at(i).toObject().keys().at(0) + " ";
                     buf += array.at(i).toObject().value(array.at(i).toObject().keys().at(0)).toString() + " ";
                 }
-                DBG_ERR("%s\n", buf.toUtf8().data());
-                insert_msg(buf);
+                insert_action_info_msg(buf);
             }
         }
     } else if (type == TOPIC_STATE){
@@ -1825,9 +1857,14 @@ void cmd_action::func(const QStringList& cmdline){
         if(cmdline.at(index) == "action_info"){
             index++;
             view |= mainPage::View_Action_Name;
+            this->cmdManager->address_set->action_id_str.clear();
             for(int i = 2; i < cmdline.size();i+=2)
             {
+                if(i + 1 >= cmdline.size())
+                    break;
                 if (!cmdManager->action_register->action_name_map.contains(cmdline[i])){//不包含就跳过
+                    TLOG_INFO("action_info skip unknown %s state=%d", cmdline[i].toUtf8().data(),
+                              this->cmdManager->ss->get_system_state());
                     continue;
                 } else {
                     this->cmdManager->address_set->action_id_str += cmdline[i] + "&" + cmdline[i+1];
@@ -1837,23 +1874,20 @@ void cmd_action::func(const QStringList& cmdline){
                 }
             }
 
-            if(cmdline[2] == "PUSH_RAIL")
+            if(cmdline.size() > 2 && cmdline[2] == "PUSH_RAIL")
             {
                 if(this->cmdManager->ss->get_system_state() == SystemState::Normal)//本架推溜
                 {
                     this->cmdManager->ss->set_system_state(SystemState::Self_pull);
                     emit this->cmdManager->self_push_pull(2, QString::number(cmdline[2].toInt()/100));
                     this->cmdManager->self_push = 1;
-                } else if(this->cmdManager->ss->get_system_state() == SystemState::LocalReal) {
-                    this->cmdManager->lock_ui_off();
                 }
-            }else if (cmdManager->action_register->action_name_map.find(cmdline[2]).value().support_controled_type&0x03) {
+            }else if (cmdline.size() > 2 && cmdManager->action_register->action_name_map.contains(cmdline[2])
+                      && (cmdManager->action_register->action_name_map.value(cmdline[2]).support_controled_type & 0x03)) {
                 if(this->cmdManager->ss->get_system_state() == SystemState::Normal)//本架动作
                 {
                     this->cmdManager->ss->set_system_state(SystemState::SelfControlled);
                     emit this->cmdManager->self_push_pull(3, "none");
-                } else if(this->cmdManager->ss->get_system_state() == SystemState::LocalReal) {
-                    this->cmdManager->lock_ui_off();
                 }
             }
         }else if(cmdline.at(index) == "stop"){
@@ -1879,6 +1913,8 @@ void cmd_action::func(const QStringList& cmdline){
             if(this->cmdManager->action_register->action_aditional_list.size() > 0)//当有附加动作时
             {
                 emit this->cmdManager->toShowauxiliary();
+            } else {
+                this->cmdManager->lock_ui_off();
             }
             return;
         }else if(cmdline.at(index) == "-fs"){
@@ -1894,7 +1930,6 @@ void cmd_action::func(const QStringList& cmdline){
                 index++;
             }
             view |= mainPage::View_Follow_Dir;
-            this->cmdManager->lock_ui_off();
         }else if(cmdline.at(index) == "-ft"){
             index++;
             if(cmdline[index] == "STEP_INIT"){
@@ -1929,12 +1964,14 @@ void cmd_action::func(const QStringList& cmdline){
                 index++;
             }
             view |= mainPage::View_Follow_Step;
-            this->cmdManager->lock_ui_off();
         }else{
             index++;
         }
     }
-    emit this->cmdManager->signal_update_action_data(view);
+    if(view == 0)
+        this->cmdManager->lock_ui_off();
+    else
+        emit this->cmdManager->signal_update_action_data(view);
 }
 
 void cmd_lock::func(const QStringList& cmdline){

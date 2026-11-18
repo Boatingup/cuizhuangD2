@@ -579,10 +579,14 @@ mainPage::mainPage(QWidget *parent) :
     parameter_name = "hydraulic_supporter_type";
     range_list = this->para->query_range_set(category_name, tab_name, parameter_name);
     update_index = this->para->query(category_name, tab_name, parameter_name, str_label);
-    if(update_index.toInt() > range_list.size()){
-        ui->label_sign_my_number->setText(range_list[0]);
-    } else {
-        ui->label_sign_my_number->setText(range_list[update_index.toInt()]);
+    {
+        int type_idx = update_index.toInt();
+        if(!range_list.isEmpty()) {
+            if(type_idx < 0 || type_idx >= range_list.size())
+                ui->label_sign_my_number->setText(range_list[0]);
+            else
+                ui->label_sign_my_number->setText(range_list[type_idx]);
+        }
     }
 
     QString category_name_health = "healthy";
@@ -893,6 +897,7 @@ mainPage::~mainPage()
 void mainPage::update_system_state(QString state){
     if(mCurrentState == state)
     {
+        this->comm_acs_thread->cmdManager->lock_ui_off();
         return;
     }
     mCurrentState = state;
@@ -914,8 +919,10 @@ void mainPage::update_system_state(QString state){
         show_date_time_icon();
         this->comm_acs_thread->cmdManager->lock_ui_off();
     }else if (state == "Normal") {
-        if(this->comm_acs_thread->cmdManager->window == this->memory_coal)
+        if(this->comm_acs_thread->cmdManager->window == this->memory_coal) {
+            this->comm_acs_thread->cmdManager->lock_ui_off();
             return ;
+        }
         memset(sensor->extern_pressure, 0, sizeof(sensor->extern_pressure));
         memset(sensor->extern_trip, 0, sizeof(sensor->extern_trip));
         this->comm_acs_thread->closeAllwindow();
@@ -1032,6 +1039,7 @@ void mainPage::update_system_state(QString state){
         this->ss->set_system_state(SystemState::Coal_Put);
         ui->label_sign_state->setPixmap(QPixmap(QString::fromUtf8(":/new/main_page/image/主界面/记忆学习.png")));
         hide_date_time_icon();
+        this->comm_acs_thread->cmdManager->lock_ui_off();
     }else if (state == "LocalReal") {
         ui->label_system_state->setText("自控");
         this->ss->set_system_state(SystemState::LocalReal);
@@ -1039,6 +1047,8 @@ void mainPage::update_system_state(QString state){
         ui->timeEdit->hide();
         ui->label_action->setText("预警");
         ui->label_action->show();
+        this->comm_acs_thread->cmdManager->lock_ui_off();
+    } else {
         this->comm_acs_thread->cmdManager->lock_ui_off();
     }
 }
@@ -1227,10 +1237,12 @@ void mainPage::update_sensor_data(unsigned int view){
         QString parameter_name = "hydraulic_supporter_type";
         QStringList range_list = this->para->query_range_set(category_name, tab_name, parameter_name);
         QString update_index = this->para->query(category_name, tab_name, parameter_name, label);
-        if(update_index.toInt() > range_list.size()){
-            ui->label_sign_my_number->setText(range_list[0]);
-        } else {
-            ui->label_sign_my_number->setText(range_list[update_index.toInt()]);
+        int type_idx = update_index.toInt();
+        if(!range_list.isEmpty()) {
+            if(type_idx < 0 || type_idx >= range_list.size())
+                ui->label_sign_my_number->setText(range_list[0]);
+            else
+                ui->label_sign_my_number->setText(range_list[type_idx]);
         }
     }
 
@@ -1269,9 +1281,16 @@ void mainPage::update_action_data(unsigned int view){
                 action_name = "本架" + temp_name;
             }
             this->address_set->action_id_str.clear();
-            emit signal_action_controlled_page(action_name, gif_info);
-            if(this->ss->get_system_state() == SystemState::LocalReal)
-                ui->label_action->setText(action_name);
+            if(action_name != m_last_action_name) {
+                m_last_action_name = action_name;
+                TLOG_INFO("update_action_data name=%s state=%d ctrl_page=%d",
+                          action_name.toUtf8().data(),
+                          this->ss->get_system_state(),
+                          this->controlled_action_page != nullptr);
+                emit signal_action_controlled_page(action_name, gif_info);
+                if(this->ss->get_system_state() == SystemState::LocalReal)
+                    ui->label_action->setText(action_name);
+            }
         }
     }
 
@@ -1378,8 +1397,8 @@ void mainPage::update_action_data(unsigned int view){
             ui->label_sign_controlled_no->setText(QString("受控架号"));
         }
         TLOG_INFO("view: 10000 %d", view);
-        this->comm_acs_thread->cmdManager->lock_ui_off();
     }
+    this->comm_acs_thread->cmdManager->lock_ui_off();
 }
 
 void mainPage::update_config_data(unsigned int view){

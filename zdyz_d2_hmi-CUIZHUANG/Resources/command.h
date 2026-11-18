@@ -82,6 +82,7 @@ public:
     void RecordMemory_coal();//记忆放煤函数
     void json_format_switch(QString type, const QByteArray &json_data);
     void insert_msg(QString &msg);
+    void insert_action_info_msg(QString &msg);
 
 signals:
 

@@ -156,7 +156,6 @@ controlled_page::~controlled_page()
 void controlled_page::update_action_descriptor(QString& action_descriptor, QString &gif_info){
     is_large = true;
     ui->label_action->setText(action_descriptor);
-    this->comm_acs_thread->cmdManager->lock_ui_off();
     run_gif(gif_info);
 }
 
@@ -176,13 +175,11 @@ void controlled_page::update_follow_direction(int dir){
     }
 
     TLOG_INFO("in update_follow_direction-----2");
-    this->comm_acs_thread->cmdManager->lock_ui_off();
 }
 
 
 void controlled_page::update_follow_step(QString step){
     ui->label_stage->setText(step);
-    this->comm_acs_thread->cmdManager->lock_ui_off();
 }
 
 void controlled_page::update_sensor_info(){

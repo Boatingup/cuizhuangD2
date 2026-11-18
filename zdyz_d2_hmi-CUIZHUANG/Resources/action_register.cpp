@@ -74,7 +74,6 @@ void ActionRegister::Find_action(QStringList &id_list,QString &action_name)
     std::lock_guard<std::mutex> lck(action_mutex);
     for(int i = 0; i < id_list.size()-1;i+=2)
     {
-        DBG_ERR("%s\n", id_list[i].toUtf8().data());
         QHash <QString, Action_info>::iterator it = this->action_name_map.find(id_list[i]);
         if(it != this->action_register->action_name_map.end())
         {
@@ -102,66 +101,33 @@ void ActionRegister::Find_action(QStringList &id_list,QString &action_name)
 int ActionRegister::getActionByindex(int index,QString & action_key,QString & action_value)
 {
     std::lock_guard<std::mutex> lck(action_mutex);
-    if(index > this->action_list.size() + 1)
+    if(index < 0 || index >= this->action_list.size())
     {
         action_key = "none";
         action_value = "none";
         return -1;
     }
 
-    QList<QPair<QString,Action_info>>::const_iterator it = this->action_list.constBegin();
-    int i = 0;
-    if(index == 0){
-        action_key = it->first;
-        action_value = it->second.action_name;
-        return 0;
-    } else {
-        while (it != this->action_list.constEnd()) {
-            ++it;
-            i++;
-            if(i == index)
-            {
-                action_key = it->first;
-                action_value = it->second.action_name;
-                return 0;
-            }
-
-        }
-    }
+    const QPair<QString, Action_info> &item = this->action_list.at(index);
+    action_key = item.first;
+    action_value = item.second.action_name;
     return 0;
 }
 
 int ActionRegister::getActionByindex(int index,QString & action_key,QString & action_value,QString &action_eng)
 {
     std::lock_guard<std::mutex> lck(action_mutex);
-    if(index > this->action_list.size() + 1)
+    if(index < 0 || index >= this->action_list.size())
     {
         action_key = "none";
         action_value = "none";
         return -1;
     }
 
-    QList<QPair<QString,Action_info>>::const_iterator it = this->action_list.constBegin();
-    int i = 0;
-    if(index == 0) {
-        action_key = it->first;
-        action_value = it->second.action_name;
-        action_eng = it->second.action_eng;
-        return 0;
-    } else {
-        while (it != this->action_list.constEnd()) {
-            ++it;
-            i++;
-            if(i == index)
-            {
-                action_key = it->first;
-                action_value = it->second.action_name;
-                action_eng = it->second.action_eng;
-                return 0;
-            }
-
-        }
-    }
+    const QPair<QString, Action_info> &item = this->action_list.at(index);
+    action_key = item.first;
+    action_value = item.second.action_name;
+    action_eng = item.second.action_eng;
     return 0;
 }
 
@@ -227,10 +193,16 @@ void ActionRegister::reload()
 #else
 
     QString type_name;
-    int type_index;
+    int type_index = 0;
     Parameters::getInstance()->get_support_type(type_name, type_index);
     QString file_type = QString(HMI_FILES_PATH_BASE) + "/depend_files/action.xml_" + QString::number(type_index);
-    load_action_xml_file_local(file_type);
+    if(access(file_type.toUtf8().data(), F_OK) != 0) {
+        TLOG_ERROR("action xml missing: %s, fallback to action.xml", file_type.toUtf8().data());
+        file_type = QString(HMI_FILES_PATH_BASE) + "/depend_files/action.xml";
+    }
+    if(load_action_xml_file_local(file_type) != 0) {
+        TLOG_ERROR("load action xml failed: %s", file_type.toUtf8().data());
+    }
 #endif
     read_local();
     getGroupNeighbourActAditionalList();
@@ -316,8 +288,6 @@ void ActionRegister::read_local(){
             pair.second = myinfo;
             this->action_aditional_list.push_back(pair);
         }
-        //DBG_ERR("%s:%s:%d\n", key_id.toUtf8().data(), myinfo.action_name.toUtf8().data(), myinfo.support_controled_type);
-        TLOG_INFO("%s : %s", key_id.toUtf8().data(), myinfo.action_name.toUtf8().data());
         this->action_map.insert(key_id, myinfo);
         this->action_name_map.insert(key_eng, myinfo);
         //DBG_ERR("%s:%s:%d\n", key_eng.toUtf8().data(), myinfo.action_name.toUtf8().data(), myinfo.support_controled_type);

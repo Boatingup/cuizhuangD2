@@ -189,6 +189,7 @@ private:
     MLabel *m_label_slogan;
     QString m_set_slogan;
     QString mCurrentState;
+    QString m_last_action_name;
 
     QTimer *coal_dead_line;
     QTimer m_audio_live_signal;
