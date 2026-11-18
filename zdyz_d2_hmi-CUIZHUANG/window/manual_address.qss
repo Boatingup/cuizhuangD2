@@ -1,0 +1,32 @@
+﻿QWidget
+{
+    background-color:#06414A;
+}
+
+QLabel
+{
+    color:white;
+    font:16pt;
+}
+
+QLabel#label_hint{
+    color:yellow;
+    font:16pt;
+}
+
+QLabel#label
+{
+    color:white;/* 前景色,可以写white */
+    font:32pt; /* 字号 */
+}
+
+QLabel#label_number
+{
+    color:yellow;/* 前景色,可以写white */
+    font:32pt; /* 字号 */
+}
+
+
+
+
+

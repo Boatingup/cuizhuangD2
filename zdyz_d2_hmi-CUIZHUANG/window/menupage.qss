@@ -1,0 +1,20 @@
+﻿
+QLabel{
+    color:white;
+    }
+
+/*
+QWidget{
+        background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #223240, stop:1.0 #252E49, stop:0.326 #1E385D, stop:0.83 #3A578D);
+	}
+QToolButton{
+	radius: 2;
+	color: rgb(255,255,255);
+	font: 20pt #FFFFFF;
+	background-color: rgba(255, 255, 255, 0);
+	}
+QToolButton:hover{
+	background-color:rgba(241,241,241,40);
+        }
+*/
+

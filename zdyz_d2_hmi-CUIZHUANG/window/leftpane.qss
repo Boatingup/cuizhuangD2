@@ -1,0 +1,60 @@
+﻿QWidget#leftPane
+{
+    /*background-color:#0A102A;*/
+    background-color:#06414A;
+}
+
+QLabel#label_category
+{
+    color:#70F9FF;/* 前景色,可以写white */
+    /*background:transparent;*/
+    font:20pt; /* 字号 */
+    margin:6px;/* 外边距 */
+    font-family:"YouSheBiaoTiHei";
+}
+
+QHeaderView
+{
+    background:#00297F;
+    border:none;
+    color: white;
+    font-family:"YouSheBiaoTiHei";
+}
+
+QTableView{
+    border:none;
+    color:#E0FFFF; /* 前景色即文字颜色 */
+    background-color:#06414A; /*交替显示中的深色*/
+    alternate-background-color:#205D5F;/* 浅色 */
+}
+
+QTabWidget::tab-bar{
+        border-width:0px;
+        alignment:left;
+        }
+
+QTabBar::tab{
+        border-bottom-color:#42A5FF;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 15px;
+        min-width:180px;
+        min-height:32px;
+        color: rgb(255,255,255);
+        background-color:#4169E1;
+        font:36px #FFFFFF;
+        font-family:"YouSheBiaoTiHei";
+        padding: 0px;
+        }
+
+QTabBar::tab:!selected {
+        margin-top: 5px;
+        }
+
+QTabBar::tab:selected {
+        color: yellow;
+        background-color: #00297F;
+        }
+
+
+
+

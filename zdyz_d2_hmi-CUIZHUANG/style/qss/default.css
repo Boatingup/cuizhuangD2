@@ -1,0 +1,72 @@
+QDialog{  
+    background-image: url(:/bg.png);  
+    border: 10px solid #999;  
+    border-radius: 100px;  
+    color: brown;
+}  
+QPushButton{
+border:2px solid #8f8f91;
+border-radius:6px;
+background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+stop:0#f6f7fa, stop: 1 #dadbde);
+min-width:80px;
+}
+
+QPushButton:pressed {
+background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+stop:0#dadbde, stop: 1 #f6f7fa);
+}
+
+QPushButton:flat {
+border: none;/* no border for a flat push button */
+}
+
+QPushButton:default{
+border-color: navy;/* make the default button prominent */
+} 
+QLabel{  
+    color:blue;  
+}  
+  
+QLineEdit{  
+    text-align: center;  
+    color:red;  
+    background-color: yellow; 
+    border: 1px solid white;  
+    selection-color:yellow;  
+    selection-background-color:green;  
+}  
+QRadioButton{  
+    color: slateblue;  
+}  
+QRadioButton::indicator:on{  
+    background-image: url(:/IMG/BG);  
+}  
+QComboBox{  
+    min-width: 4em;  
+    background-color: transparent;  
+}  
+QComboBox:on{  
+    color:red;  
+}  
+QComboBox:off{  
+    color:black;  
+}  
+QComboBox QAbstractItemView {  
+    border: 1px solid black;  
+    color:black;  
+    selection-color: red;  
+    selection-background-color: green;  
+}  
+QProgressBar{  
+    border: 1px solid #999;  
+    border-radius:5px;  
+    text-align: center;  
+    background-color: transparent;  
+}  
+  
+QProgressBar::chunk {
+background-color:#CD96CD;
+width:10px;
+margin:0.5px;
+}

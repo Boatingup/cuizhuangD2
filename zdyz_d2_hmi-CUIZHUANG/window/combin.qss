@@ -1,0 +1,32 @@
+﻿QHeaderView
+{
+    background:#00297F;
+    border:none;
+    color: white;
+
+}
+
+QTableView{
+    border:none;
+    color:#E0FFFF; /* 前景色即文字颜色 */
+    background-color:#06414A; /*交替显示中的深色*/
+    alternate-background-color:#205D5F;/* 浅色 */
+}
+
+QTabWidget::tab-bar{
+        border-width:0px;
+        alignment:left;
+        }
+
+QTabBar::tab:!selected {
+        margin-top: 5px;
+        }
+
+QTabBar::tab:selected {
+        color: yellow;
+        background-color: #00297F;
+        }
+
+
+
+

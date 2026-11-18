@@ -1,0 +1,21 @@
+QWidget#action_set
+{
+    background-color:#0A102A;
+    border:1px solid white;
+
+}
+
+QLabel{
+    color:white;
+    font:16pt;
+}
+
+QLabel#label_parameter_name,#label_input_value{
+    color:yellow;
+    font:24pt;
+}
+
+QLabel#label_3,#label_range_set,#label_range_high,#label_range_low,#label_bolangxian{
+    color:yellow;
+    font:16pt;
+}

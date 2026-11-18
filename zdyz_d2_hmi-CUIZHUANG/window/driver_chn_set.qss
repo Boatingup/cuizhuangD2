@@ -1,0 +1,16 @@
+QWidget#driver_chn_set
+{
+    background-color:#0A102A;
+    border:1px solid white;
+
+}
+
+QLabel{
+    color:white;
+    font:16pt;
+}
+
+QLabel#label,#set_label,#cancel_label{
+    color:yellow;
+    font:16pt;
+}

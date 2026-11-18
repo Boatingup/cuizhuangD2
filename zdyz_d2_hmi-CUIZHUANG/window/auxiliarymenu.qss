@@ -1,0 +1,42 @@
+﻿QWidget#AuxiliaryMenu
+{
+    background-color:#0A102A;
+    border:1px solid white;
+}
+
+QLabel#label,#label_2{
+    color:white;
+    font:12pt;
+}
+
+QLabel#label_3{
+    color:yellow;
+    font:15pt;
+}
+
+QHeaderView
+{
+    background:#00297F;
+    border:none;
+    color: white;
+
+}
+
+QTableView{
+    border:none;
+    color:#E0FFFF; /* 前景色即文字颜色 */
+    background-color:#0A102A; /*交替显示中的深色*/
+    alternate-background-color:#071341;/* 浅色 */
+}
+
+/*
+QScrollBar:vertical {
+    border: 0px;
+    background:rgba(255,255,255,0);
+    width: 5px;
+    margin: 22px 0  22px 0;
+}
+*/
+
+
+

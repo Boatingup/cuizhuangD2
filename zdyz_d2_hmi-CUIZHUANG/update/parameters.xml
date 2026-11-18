@@ -1,0 +1,2106 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<parameters>
+    <block id="1" category="system">
+        <subblock name="system_para">
+            <element name="controlTime">
+                <descriptor>主控时间</descriptor>
+                <real_value>15</real_value>
+                <default_value>5.0</default_value>
+                <range_low>15.0</range_low>
+                <range_high>200.0</range_high>
+                <unit>s</unit>
+                <global>g_local</global>
+                <end>END</end>
+            </element>
+            <element name="GroupVolume">
+                <descriptor>组播音量</descriptor>
+                <real_value>105</real_value>
+                <default_value>60</default_value>
+                <range_low>0</range_low>
+                <range_high>112</range_high>
+                <unit/>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="controlAlertTime">
+                <descriptor>受控预警时间</descriptor>
+                <real_value>10</real_value>
+                <default_value>2.0</default_value>
+                <range_low>1.0</range_low>
+                <range_high>30.0</range_high>
+                <unit>s</unit>
+                <global>g_local</global>
+                <end>END</end>
+            </element>
+            <element name="groupAlertTime">
+                <descriptor>成组预警时间</descriptor>
+                <real_value>5</real_value>
+                <default_value>2.0</default_value>
+                <range_low>0</range_low>
+                <range_high>30.0</range_high>
+                <unit>s</unit>
+                <global>g_local</global>
+                <end>END</end>
+            </element>
+            <element name="minAddress">
+                <descriptor>最小架号</descriptor>
+                <real_value>35</real_value>
+                <default_value>1</default_value>
+                <range_low>1</range_low>
+                <range_high>255</range_high>
+                <unit>#</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="maxAddress">
+                <descriptor>最大架号</descriptor>
+                <real_value>22</real_value>
+                <default_value>255</default_value>
+                <range_low>1</range_low>
+                <range_high>255</range_high>
+                <unit>#</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="minMiddleAddress">
+                <descriptor>中间小号</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_low>1</range_low>
+                <range_high>255</range_high>
+                <unit>#</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="maxMiddleAddress">
+                <descriptor>中间大号</descriptor>
+                <real_value>42</real_value>
+                <default_value>255</default_value>
+                <range_low>1</range_low>
+                <range_high>255</range_high>
+                <unit>#</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="addressDir">
+                <descriptor>编址方向</descriptor>
+                <real_value>1</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">从左向右</range_set>
+                <range_set index="1">从右向左</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="periodicdataReport">
+                <descriptor>数据上报周期</descriptor>
+                <real_value>3.0</real_value>
+                <default_value>2.0</default_value>
+                <range_low>0</range_low>
+                <range_high>10.0</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="actionReport">
+                <descriptor>动作上报</descriptor>
+                <real_value>0</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="stopRange">
+                <descriptor>停止范围</descriptor>
+                <real_value>5</real_value>
+                <default_value>3</default_value>
+                <range_low>1</range_low>
+                <range_high>50</range_high>
+                <unit>#</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="workface_setup">
+                <descriptor>工作面升级</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>10</range_set_num>
+                <range_set index="0">ACS</range_set>
+                <range_set index="1">HMI</range_set>
+                <range_set index="2">all</range_set>
+                <range_set index="3">parameters.xml</range_set>
+                <range_set index="4">/depend_files/action.xml</range_set>
+                <range_set index="5">alsa_rtsp_server</range_set>
+                <range_set index="6">ffplay</range_set>
+                <range_set index="7">VersionTools</range_set>
+                <range_set index="8">ClientConfig.ini</range_set>
+                <range_set index="9">ServerConfig.ini</range_set>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="data_acquisition">
+            <element name="pressure_switch">
+                <descriptor>压力传感器</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="inclination_switch">
+                <descriptor>倾角传感器</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="travel_switch">
+                <descriptor>行程传感器</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="proximity_switch">
+                <descriptor>接近传感器</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="upper_protection_switch">
+                <descriptor>护帮传感器</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="infrared_switch">
+                <descriptor>红外传感器</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="automatic_voltage_supplement">
+            <element name="pressure_switch">
+                <descriptor>自动补压</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="time">
+                <descriptor>补压时间</descriptor>
+                <real_value>2.0</real_value>
+                <default_value>2.0</default_value>
+                <range_low>1.0</range_low>
+                <range_high>30.0</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="interval">
+                <descriptor>补压间隔</descriptor>
+                <real_value>1.3</real_value>
+                <default_value>2.0</default_value>
+                <range_low>1.0</range_low>
+                <range_high>30.0</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="times">
+                <descriptor>补压次数</descriptor>
+                <real_value>3</real_value>
+                <default_value>3</default_value>
+                <range_low>0</range_low>
+                <range_high>10</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="upper_limit_expansion_beam">
+                <descriptor>伸缩梁上限</descriptor>
+                <real_value>28</real_value>
+                <default_value>28</default_value>
+                <range_low>0</range_low>
+                <range_high>600</range_high>
+                <unit>#</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="lower_limit_expansion_beam">
+                <descriptor>伸缩梁下限</descriptor>
+                <real_value>22</real_value>
+                <default_value>22</default_value>
+                <range_low>0</range_low>
+                <range_high>60</range_high>
+                <unit>#</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="upper_limit_protective_gang">
+                <descriptor>护帮上限</descriptor>
+                <real_value>28</real_value>
+                <default_value>28</default_value>
+                <range_low>0</range_low>
+                <range_high>60</range_high>
+                <unit>#</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="lower_limit_protective_gang">
+                <descriptor>护帮下限</descriptor>
+                <real_value>22</real_value>
+                <default_value>22</default_value>
+                <range_low>0</range_low>
+                <range_high>60</range_high>
+                <unit>#</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="upper_limit_column">
+                <descriptor>立柱上限</descriptor>
+                <real_value>28</real_value>
+                <default_value>28</default_value>
+                <range_low>0</range_low>
+                <range_high>60</range_high>
+                <unit>#</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="lower_limit_column">
+                <descriptor>立柱下限</descriptor>
+                <real_value>22</real_value>
+                <default_value>22</default_value>
+                <range_low>0</range_low>
+                <range_high>60</range_high>
+                <unit>#</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="column_offset">
+                <descriptor>立柱偏移</descriptor>
+                <real_value>150</real_value>
+                <default_value>150</default_value>
+                <range_low>0</range_low>
+                <range_high>60</range_high>
+                <unit>#</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="upper_limit_top_beam">
+                <descriptor>顶梁上限</descriptor>
+                <real_value>37</real_value>
+                <default_value>37</default_value>
+                <range_low>0</range_low>
+                <range_high>60</range_high>
+                <unit>#</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="lower_limit_top_beam">
+                <descriptor>顶梁下限</descriptor>
+                <real_value>33</real_value>
+                <default_value>33</default_value>
+                <range_low>0</range_low>
+                <range_high>60</range_high>
+                <unit>#</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="upper_limit_tail_beam">
+                <descriptor>尾粱上限</descriptor>
+                <real_value>33</real_value>
+                <default_value>33</default_value>
+                <range_low>0</range_low>
+                <range_high>60</range_high>
+                <unit>#</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="lower_limit_tail_beam">
+                <descriptor>尾粱下限</descriptor>
+                <real_value>37</real_value>
+                <default_value>37</default_value>
+                <range_low>0</range_low>
+                <range_high>60</range_high>
+                <unit>#</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="inertial_navigation_alignment">
+            <element name="alignment_switch">
+                <descriptor>找直允许</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="alignment_mode">
+                <descriptor>找直模式</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="alignment_target">
+                <descriptor>找直目标</descriptor>
+                <real_value>50</real_value>
+                <default_value>50</default_value>
+                <range_low>0</range_low>
+                <range_high>1400</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+    </block>
+    <block id="2" category="control_para">
+        <subblock name="push_rail">
+            <element name="action_switch">
+                <descriptor>动作开关</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="interval">
+                <descriptor>启动间隔</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>10</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="range">
+                <descriptor>动作范围</descriptor>
+                <real_value>1</real_value>
+                <default_value>8</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="group">
+                <descriptor>动作组</descriptor>
+                <real_value>2</real_value>
+                <default_value>1</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="delay">
+                <descriptor>组间延时</descriptor>
+                <real_value>5</real_value>
+                <default_value>2</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="time">
+                <descriptor>推溜时间</descriptor>
+                <real_value>60</real_value>
+                <default_value>5</default_value>
+                <range_low>1</range_low>
+                <range_high>60</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="pressure_switch">
+                <descriptor>压力开关</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="allowed_pressure">
+                <descriptor>允许压力</descriptor>
+                <real_value>24</real_value>
+                <default_value>24</default_value>
+                <range_low>0</range_low>
+                <range_high>45</range_high>
+                <unit>MPa</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="distance_switch">
+                <descriptor>行程开关</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="target_distance">
+                <descriptor>目标行程</descriptor>
+                <real_value>800</real_value>
+                <default_value>800</default_value>
+                <range_low>600</range_low>
+                <range_high>1400</range_high>
+                <unit>mm</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="selftime">
+                <descriptor>自推时间</descriptor>
+                <real_value>10</real_value>
+                <default_value>60</default_value>
+                <range_low>10</range_low>
+                <range_high>120</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="assist_switch">
+                <descriptor>助推开关</descriptor>
+                <real_value>1</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="move">
+            <element name="action_switch">
+                <descriptor>动作开关</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="interval">
+                <descriptor>启动间隔</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>10</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="range">
+                <descriptor>动作范围</descriptor>
+                <real_value>2</real_value>
+                <default_value>8</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="differential_move">
+                <descriptor>差分移架</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="guard_linkage">
+                <descriptor>护帮联动</descriptor>
+                <real_value>0</real_value>
+                <defaultValue>0</defaultValue>
+                <range_set_num>4</range_set_num>
+                <range_set index="0">伸</range_set>
+                <range_set index="1">收</range_set>
+                <range_set index="2">伸收</range_set>
+                <range_set index="3">无</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="brace_switch">
+                <descriptor>未达初撑力</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">禁止</range_set>
+                <range_set index="1">允许</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="wipe_move">
+                <descriptor>擦顶移架</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">禁止</range_set>
+                <range_set index="1">允许</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="lower_time">
+                <descriptor>降柱时间</descriptor>
+                <real_value>5</real_value>
+                <default_value>2</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="lower_time1">
+                <descriptor>再降柱时间</descriptor>
+                <real_value>5</real_value>
+                <default_value>2</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="move_time">
+                <descriptor>移架时间</descriptor>
+                <real_value>5</real_value>
+                <default_value>2</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="lift_time">
+                <descriptor>升柱时间</descriptor>
+                <real_value>5</real_value>
+                <default_value>2</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="lift_time1">
+                <descriptor>再升柱时间</descriptor>
+                <real_value>2</real_value>
+                <default_value>2</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="pressure_switch">
+                <descriptor>压力开关</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="move_pressure">
+                <descriptor>允许压力</descriptor>
+                <real_value>10</real_value>
+                <default_value>10</default_value>
+                <range_low>0</range_low>
+                <range_high>45</range_high>
+                <unit>MPa</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="transition_pressure">
+                <descriptor>过渡压力</descriptor>
+                <real_value>18</real_value>
+                <default_value>18</default_value>
+                <range_low>0</range_low>
+                <range_high>45</range_high>
+                <unit>MPa</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="brace_pressure">
+                <descriptor>支撑压力</descriptor>
+                <real_value>26</real_value>
+                <default_value>26</default_value>
+                <range_low>0</range_low>
+                <range_high>45</range_high>
+                <unit>MPa</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="distance_switch">
+                <descriptor>行程开关</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="target_distance">
+                <descriptor>目标行程</descriptor>
+                <real_value>800</real_value>
+                <default_value>800</default_value>
+                <range_low>600</range_low>
+                <range_high>1400</range_high>
+                <unit>mm</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="near_switch">
+                <descriptor>接近开关</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="liftbottom_switch">
+                <descriptor>抬底允许</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">禁止</range_set>
+                <range_set index="1">允许</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="begin_time">
+                <descriptor>开始抬底</descriptor>
+                <real_value>2</real_value>
+                <default_value>2</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="liftbottom_time">
+                <descriptor>抬底时间</descriptor>
+                <real_value>2</real_value>
+                <default_value>2</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="lifbottom_target">
+                <descriptor>抬底目标</descriptor>
+                <real_value>20</real_value>
+                <default_value>20</default_value>
+                <range_low>0</range_low>
+                <range_high>300</range_high>
+                <unit>mm</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="spray_switch">
+                <descriptor>喷雾允许</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">禁止</range_set>
+                <range_set index="1">允许</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="spray_begin_time">
+                <descriptor>开始喷雾</descriptor>
+                <real_value>2</real_value>
+                <default_value>2</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="spray_time">
+                <descriptor>喷雾时间</descriptor>
+                <real_value>2</real_value>
+                <default_value>2</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="moveaslowwe_switch">
+                <descriptor>边降边移</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">禁止</range_set>
+                <range_set index="1">允许</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="lower_as_move_time">
+                <descriptor>边降时间</descriptor>
+                <real_value>2</real_value>
+                <default_value>2</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="lower_guard_switch">
+                <descriptor>降柱时侧护</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">禁止</range_set>
+                <range_set index="1">允许</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="lower_guard_time">
+                <descriptor>收侧护时间</descriptor>
+                <real_value>2</real_value>
+                <default_value>2</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="lift_guard_switch">
+                <descriptor>升柱后侧护</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">禁止</range_set>
+                <range_set index="1">允许</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="lift_guard_time">
+                <descriptor>伸侧护时间</descriptor>
+                <real_value>2</real_value>
+                <default_value>2</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="stretchflexbeam_pressure">
+                <descriptor>伸缩梁压力</descriptor>
+                <real_value>18</real_value>
+                <default_value>18</default_value>
+                <range_low>0</range_low>
+                <range_high>45</range_high>
+                <unit>MPa</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="guard_pressure">
+                <descriptor>护帮压力</descriptor>
+                <real_value>18</real_value>
+                <default_value>18</default_value>
+                <range_low>0</range_low>
+                <range_high>45</range_high>
+                <unit>MPa</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="dip_angle_switch">
+                <descriptor>倾角开关</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="dip_angle_up">
+                <descriptor>倾角上限</descriptor>
+                <real_value>37</real_value>
+                <default_value>37</default_value>
+                <range_low>0</range_low>
+                <range_high>60</range_high>
+                <unit>°</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="dip_angle_down">
+                <descriptor>倾角下限</descriptor>
+                <real_value>33</real_value>
+                <default_value>33</default_value>
+                <range_low>0</range_low>
+                <range_high>60</range_high>
+                <unit>°</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="bottom_up_time">
+                <descriptor>收底调时间</descriptor>
+                <real_value>2</real_value>
+                <default_value>2</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="protective_gang">
+            <element name="action_switch">
+                <descriptor>动作开关</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="interval">
+                <descriptor>启动间隔</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="range">
+                <descriptor>动作范围</descriptor>
+                <real_value>8</real_value>
+                <default_value>8</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="delay">
+                <descriptor>架间延迟</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="extension_time">
+                <descriptor>伸护帮时间</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="collection_time">
+                <descriptor>收护帮时间</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="telescopic_beam">
+            <element name="action_switch">
+                <descriptor>动作开关</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="interval">
+                <descriptor>启动间隔</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="range">
+                <descriptor>动作范围</descriptor>
+                <real_value>8</real_value>
+                <default_value>8</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="delay">
+                <descriptor>架间延迟</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="extension_time">
+                <descriptor>伸伸缩梁时间</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="collection_time">
+                <descriptor>收伸缩梁时间</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="spray">
+            <element name="action_switch">
+                <descriptor>动作开关</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="range">
+                <descriptor>动作范围</descriptor>
+                <real_value>2</real_value>
+                <default_value>2</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="time">
+                <descriptor>喷雾时间</descriptor>
+                <real_value>10</real_value>
+                <default_value>10</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="interval">
+                <descriptor>启动间隔</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="backwashing">
+            <element name="range">
+                <descriptor>动作范围</descriptor>
+                <real_value>8</real_value>
+                <default_value>8</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="interval">
+                <descriptor>启动间隔</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>10</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="timing">
+                <descriptor>自动定时</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">禁止</range_set>
+                <range_set index="1">允许</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="recoil_times">
+                <descriptor>每日反冲次数</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_low>0</range_low>
+                <range_high>10</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="first_recoil_time">
+                <descriptor>首次反冲时间</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>24</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="upper_recoil">
+                <descriptor>上反冲</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">禁止</range_set>
+                <range_set index="1">允许</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="lower_recoil">
+                <descriptor>下反冲</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">禁止</range_set>
+                <range_set index="1">允许</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="flushing_time">
+                <descriptor>冲洗时间</descriptor>
+                <real_value>10</real_value>
+                <default_value>10</default_value>
+                <range_low>10</range_low>
+                <range_high>300</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="up_down_interval">
+                <descriptor>上下间隔</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="inter_rack_spacing">
+                <descriptor>架间间隔</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="pull_back_slide">
+            <element name="action_switch">
+                <descriptor>动作开关</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="interval">
+                <descriptor>启动间隔</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>10</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="range">
+                <descriptor>动作范围</descriptor>
+                <real_value>8</real_value>
+                <default_value>8</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="group">
+                <descriptor>动作组</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="group_delay">
+                <descriptor>组间延迟</descriptor>
+                <real_value>2</real_value>
+                <default_value>2</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="pull_slip_time">
+                <descriptor>拉溜时间</descriptor>
+                <real_value>8</real_value>
+                <default_value>8</default_value>
+                <range_low>1</range_low>
+                <range_high>60</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="coal_drawing">
+            <element name="mode">
+                <descriptor>放煤模式</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">自动</range_set>
+                <range_set index="1">记忆</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="interval">
+                <descriptor>启动间隔</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>10</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="range">
+                <descriptor>动作范围</descriptor>
+                <real_value>8</real_value>
+                <default_value>8</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="inter_rack_delay">
+                <descriptor>架间延迟</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="differential_coal_caving">
+                <descriptor>差分放煤</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">禁止</range_set>
+                <range_set index="1">允许</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="direction">
+                <descriptor>放煤方向</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">右</range_set>
+                <range_set index="1">左</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="template_learn">
+                <descriptor>模板学习</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">取消</range_set>
+                <range_set index="1">确定</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="memory_template">
+                <descriptor>记忆模板</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">无</range_set>
+                <range_set index="1">有</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="clear_template">
+                <descriptor>清除模板</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">单架</range_set>
+                <range_set index="1">g_global</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="learn_interval">
+                <descriptor>学习间隔</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="ending_beam_time">
+                <descriptor>收尾粱时间</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="plug_in_time">
+                <descriptor>收插板时间</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="pause_time1">
+                <descriptor>停顿时间1</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="tail_swing_times">
+                <descriptor>尾摆次数</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="tail_swing_extension_time">
+                <descriptor>尾摆伸时间</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="tail_swing_in_time">
+                <descriptor>尾摆收时间</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="pause_time2">
+                <descriptor>停顿时间2</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="extension_time">
+                <descriptor>伸插板时间</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="tail_beam_extension_time">
+                <descriptor>伸尾粱时间</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+    </block>
+    <block id="3" category="follow_para">
+        <subblock name="follow_status">
+            <element name="start_stop_switch">
+                <descriptor>启停开关</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="type">
+                <descriptor>跟机类型</descriptor>
+                <real_value>1</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">中部</range_set>
+                <range_set index="1">全工作面</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="technique">
+                <descriptor>跟机工艺</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">工艺1</range_set>
+                <range_set index="1">工艺2</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="direction">
+                <descriptor>跟机走向</descriptor>
+                <real_value>0</real_value>
+                <default_value>3</default_value>
+                <range_set_num>3</range_set_num>
+                <range_set index="0">上</range_set>
+                <range_set index="1">下</range_set>
+                <range_set index="2">双向</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="set">
+                <descriptor>阶段设置</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>145</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="stop_time">
+                <descriptor>停止时间</descriptor>
+                <real_value>40</real_value>
+                <default_value>40</default_value>
+                <range_low>1</range_low>
+                <range_high>255</range_high>
+                <unit>s</unit>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="basic_para">
+            <element name="length">
+                <descriptor>煤机身长</descriptor>
+                <real_value>9</real_value>
+                <default_value>9</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="first_frame">
+                <descriptor>跟机首架</descriptor>
+                <real_value>30</real_value>
+                <default_value>30</default_value>
+                <range_low>1</range_low>
+                <range_high>255</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="end_frame">
+                <descriptor>跟机末架</descriptor>
+                <real_value>80</real_value>
+                <default_value>80</default_value>
+                <range_low>1</range_low>
+                <range_high>255</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="uplink_phase5">
+                <descriptor>上行阶段5</descriptor>
+                <real_value>50</real_value>
+                <default_value>50</default_value>
+                <range_low>1</range_low>
+                <range_high>255</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="uplink_phase6">
+                <descriptor>上行阶段6</descriptor>
+                <real_value>50</real_value>
+                <default_value>50</default_value>
+                <range_low>1</range_low>
+                <range_high>255</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="downlink_phase5">
+                <descriptor>下行阶段5</descriptor>
+                <real_value>50</real_value>
+                <default_value>50</default_value>
+                <range_low>1</range_low>
+                <range_high>255</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="downlink_phase6">
+                <descriptor>下行阶段6</descriptor>
+                <real_value>50</real_value>
+                <default_value>50</default_value>
+                <range_low>1</range_low>
+                <range_high>255</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="slid_distance2">
+                <descriptor>推溜距离2</descriptor>
+                <real_value>13</real_value>
+                <default_value>13</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="end_manual">
+                <descriptor>端头手动</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">否</range_set>
+                <range_set index="1">是</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="moving_action_para">
+            <element name="action_switch">
+                <descriptor>移架动作</descriptor>
+                <real_value>1</real_value>
+                <default_value>1</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="moving_distance">
+                <descriptor>移架距离</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>10</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="moving_range">
+                <descriptor>移架范围</descriptor>
+                <real_value>8</real_value>
+                <default_value>8</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="push_action_switch">
+                <descriptor>推溜动作</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="push_distance">
+                <descriptor>推溜距离</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>10</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="push_range">
+                <descriptor>移架范围</descriptor>
+                <real_value>8</real_value>
+                <default_value>8</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="protective_action_switch">
+                <descriptor>护帮动作</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="upper_extension_distance">
+                <descriptor>伸护帮距离</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>10</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="upper_extension_range">
+                <descriptor>伸护帮范围</descriptor>
+                <real_value>8</real_value>
+                <default_value>8</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="collect_extension_distance">
+                <descriptor>收护帮距离</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>10</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="collect_extension_range">
+                <descriptor>收护帮范围</descriptor>
+                <real_value>8</real_value>
+                <default_value>8</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="spray_action_switch">
+                <descriptor>喷雾动作</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关</range_set>
+                <range_set index="1">开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="spray_above_distance">
+                <descriptor>上方喷雾距离</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>10</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="spray_below_distance">
+                <descriptor>下方喷雾距离</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_low>0</range_low>
+                <range_high>10</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="spray_above_range">
+                <descriptor>上方喷雾范围</descriptor>
+                <real_value>8</real_value>
+                <default_value>8</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+            <element name="spray_below_range">
+                <descriptor>下方喷雾范围</descriptor>
+                <real_value>8</real_value>
+                <default_value>8</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+    </block>
+    <block id="4" category="healthy">
+        <subblock name="port_config">
+            <element name="P4">
+                <descriptor>P4端口</descriptor>
+                <real_value>0</real_value>
+                <default_value>send</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set name="ad_mode" index="0">AD模式</range_set>
+                <range_set name="back_wash" index="1">反冲洗模式</range_set>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="P5">
+                <descriptor>P5端口</descriptor>
+                <real_value>3</real_value>
+                <default_value>send</default_value>
+                <range_set_num>8</range_set_num>
+                <range_set name="disable_485" index="0">禁用485模式</range_set>
+                <range_set name="digital_dip_485" index="1">数字倾角传感器模式</range_set>
+                <range_set name="digital_pres_485" index="2">数字压力传感器模式</range_set>
+                <range_set name="signal_485" index="3">信号转换器模式</range_set>
+                <range_set name="coal_485" index="4">放煤键盘模式</range_set>
+                <range_set name="sbc1_485" index="5">电磁阀驱动器1模式</range_set>
+                <range_set name="sbc2_485" index="6">电磁阀驱动器2模式</range_set>
+                <range_set name="ad_mode" index="7">AD模式</range_set>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="P6">
+                <descriptor>P6端口</descriptor>
+                <real_value>0</real_value>
+                <default_value>send</default_value>
+                <range_set_num>7</range_set_num>
+                <range_set name="disable_485" index="0">禁用485模式</range_set>
+                <range_set name="digital_dip_485" index="1">数字倾角传感器模式</range_set>
+                <range_set name="digital_pres_485" index="2">数字压力传感器模式</range_set>
+                <range_set name="signal_485" index="3">信号转换器模式</range_set>
+                <range_set name="coal_485" index="4">放煤键盘模式</range_set>
+                <range_set name="sbc1_485" index="5">电磁阀驱动器1模式</range_set>
+                <range_set name="sbc1_485" index="6">电磁阀驱动器2模式</range_set>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="P7">
+                <descriptor>P7端口</descriptor>
+                <real_value>0</real_value>
+                <default_value>send</default_value>
+                <range_set_num>7</range_set_num>
+                <range_set name="disable_485" index="0">禁用485模式</range_set>
+                <range_set name="digital_dip_485" index="1">数字倾角传感器模式</range_set>
+                <range_set name="digital_pres_485" index="2">数字压力传感器模式</range_set>
+                <range_set name="signal_485" index="3">信号转换器模式</range_set>
+                <range_set name="coal_485" index="4">放煤键盘模式</range_set>
+                <range_set name="sbc1_485" index="5">电磁阀驱动器1模式</range_set>
+                <range_set name="sbc1_485" index="6">电磁阀驱动器2模式</range_set>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="P8">
+                <descriptor>P8端口</descriptor>
+                <real_value>0</real_value>
+                <default_value>send</default_value>
+                <range_set_num>7</range_set_num>
+                <range_set name="disable_485" index="0">禁用485模式</range_set>
+                <range_set name="digital_dip_485" index="1">数字倾角传感器模式</range_set>
+                <range_set name="digital_pres_485" index="2">数字压力传感器模式</range_set>
+                <range_set name="signal_485" index="3">信号转换器模式</range_set>
+                <range_set name="coal_485" index="4">放煤键盘模式</range_set>
+                <range_set name="sbc1_485" index="5">电磁阀驱动器1模式</range_set>
+                <range_set name="sbc1_485" index="6">电磁阀驱动器2模式</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="AD" type="readonly">
+            <element name="AD1">
+                <descriptor>AD1值</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1</range_low>
+                <range_high>500</range_high>
+                <unit/>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="AD2">
+                <descriptor>AD2值</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1</range_low>
+                <range_high>200</range_high>
+                <unit/>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="AD3">
+                <descriptor>AD3值</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1</range_low>
+                <range_high>500</range_high>
+                <unit/>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="AD4">
+                <descriptor>AD4值</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1</range_low>
+                <range_high>500</range_high>
+                <unit/>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="AD5">
+                <descriptor>AD5值</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1</range_low>
+                <range_high>200</range_high>
+                <unit/>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="AD6">
+                <descriptor>AD6值</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1</range_low>
+                <range_high>500</range_high>
+                <unit/>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="AD7">
+                <descriptor>AD7值</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1</range_low>
+                <range_high>200</range_high>
+                <unit/>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="AD8">
+                <descriptor>AD8值</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1</range_low>
+                <range_high>500</range_high>
+                <unit/>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="AD9">
+                <descriptor>AD9值</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1</range_low>
+                <range_high>200</range_high>
+                <unit/>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="AD10">
+                <descriptor>AD10值</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1</range_low>
+                <range_high>500</range_high>
+                <unit/>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="AD11">
+                <descriptor>AD11值</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1</range_low>
+                <range_high>200</range_high>
+                <unit/>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="AD12">
+                <descriptor>AD12值</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1</range_low>
+                <range_high>200</range_high>
+                <unit/>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="AD13">
+                <descriptor>AD13值</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1</range_low>
+                <range_high>200</range_high>
+                <unit/>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="AD14">
+                <descriptor>AD14值</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1</range_low>
+                <range_high>200</range_high>
+                <unit/>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="AD15">
+                <descriptor>AD15值</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1</range_low>
+                <range_high>200</range_high>
+                <unit/>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="AD16">
+                <descriptor>AD16值</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1</range_low>
+                <range_high>200</range_high>
+                <unit/>
+                <global>none</global>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="SenSorData" type="readonly">
+            <element name="PressureSensor1">
+                <descriptor>压力传感器1</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1.0</range_low>
+                <range_high>30.0</range_high>
+                <unit>MP</unit>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="PressureSensor2">
+                <descriptor>压力传感器2</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1.0</range_low>
+                <range_high>30.0</range_high>
+                <unit>MP</unit>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="Travelsensor1">
+                <descriptor>行程传感器1</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1.0</range_low>
+                <range_high>30.0</range_high>
+                <unit>MP</unit>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="Humiditysensor1">
+                <descriptor>湿度传感器1</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1.0</range_low>
+                <range_high>30.0</range_high>
+                <unit>°</unit>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="Inclinationsensor1">
+                <descriptor>倾角传感器1</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1.0</range_low>
+                <range_high>30.0</range_high>
+                <unit>°</unit>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="Inclinationsensor2">
+                <descriptor>倾角传感器2</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1.0</range_low>
+                <range_high>30.0</range_high>
+                <unit>°</unit>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="Inclinationsensor3">
+                <descriptor>倾角传感器3</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1.0</range_low>
+                <range_high>30.0</range_high>
+                <unit>°</unit>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="Inclinationsensor4">
+                <descriptor>倾角传感器4</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1.0</range_low>
+                <range_high>30.0</range_high>
+                <unit>°</unit>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="Inclinationsensor5">
+                <descriptor>倾角传感器5</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1.0</range_low>
+                <range_high>30.0</range_high>
+                <unit>°</unit>
+                <global>none</global>
+                <end>END</end>
+            </element>
+            <element name="Inclinationsensor6">
+                <descriptor>倾角传感器6</descriptor>
+                <real_value>none</real_value>
+                <default_value>none</default_value>
+                <range_low>1.0</range_low>
+                <range_high>30.0</range_high>
+                <unit>°</unit>
+                <global>none</global>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="infrared_info">
+            <element name="infrared_pyroelectric_switch">
+                <descriptor>红外开关</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关闭</range_set>
+                <range_set index="1">打开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+    </block>
+    <block id="5" category="set_para">
+        <subblock name="controller_info">
+            <element name="version_record">
+                <descriptor>版本信息</descriptor>
+                <hmi_version>20220207v1.1</hmi_version>
+                <acs_version>20220207v1.0</acs_version>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="uwb_info">
+            <element name="uwb_set_distance">
+                <descriptor>uwb定位参数设置</descriptor>
+                <clock_rack_num>100</clock_rack_num>
+                <clock_distance>900</clock_distance>
+                <distance_between_rack>180</distance_between_rack>
+                <uint>mm</uint>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="System_error">
+            <element name="Acs_error">
+                <descriptor>系统错误</descriptor>
+                <real_value>none</real_value>
+                <default_value>1</default_value>
+                <range_set_num>25</range_set_num>
+                <range_set name="left_can_error" index="0">左邻架can总线故障</range_set>
+                <range_set name="right_can_error" index="1">右邻架can总线故障</range_set>
+                <range_set name="left_net_error" index="2">左邻架网络故障</range_set>
+                <range_set name="right_net_error" index="3">右邻架网络故障</range_set>
+                <range_set name="connect_uart_error" index="4">连接器板串口故障</range_set>
+                <range_set name="key_uart_error" index="5">按键板串口故障</range_set>
+                <range_set name="sensor_pressure1_error" index="6">压力传感器一故障</range_set>
+                <range_set name="sensor_pressure2_error" index="7">压力传感器二故障</range_set>
+                <range_set name="sensor_pressure3_error" index="8">压力传感器三故障</range_set>
+                <range_set name="sensor_pressure4_error" index="9">压力传感器四故障</range_set>
+                <range_set name="sensor_pressure5_error" index="10">压力传感器五故障</range_set>
+                <range_set name="sensor_angle1_error" index="11">倾角传感器一故障</range_set>
+                <range_set name="sensor_angle2_error" index="12">倾角传感器二故障</range_set>
+                <range_set name="sensor_angle3_error" index="13">倾角传感器三故障</range_set>
+                <range_set name="sensor_angle4_error" index="14">倾角传感器四故障</range_set>
+                <range_set name="sensor_angle5_error" index="15">倾角传感器五故障</range_set>
+                <range_set name="sensor_angle6_error" index="16">倾角传感器六故障</range_set>
+                <range_set name="sensor_infra_error" index="17">红外传感器故障</range_set>
+                <range_set name="sensor_trip_error" index="18">行程传感器故障</range_set>
+                <range_set name="connect_driver_error" index="19">驱动器供电电流故障</range_set>
+                <range_set name="connect_up_backflush_error" index="20">上反冲故障</range_set>
+                <range_set name="connect_down_backflush_error" index="21">下反冲故障</range_set>
+                <range_set name="connect_rjgt_error" index="22">rjgt故障</range_set>
+                <range_set name="connect_sht30_error" index="23">sht30故障</range_set>
+                <range_set name="connect_mpu6050_error" index="24">mpu6050故障</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+    </block>
+</parameters>

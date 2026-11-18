@@ -1,0 +1,32 @@
+﻿QWidget
+{
+    background-color:#06414A;
+
+}
+
+QLabel
+{
+    color:#808080;/* 前景色,可以写white */
+    /*background:transparent;*/
+    font:20pt; /* 字号 */
+    margin:6px;/* 外边距 */
+}
+
+QHeaderView
+{
+    background:#00297F;
+    border:none;
+    color: white;
+
+}
+
+QTableView{
+    border:none;
+    color:#E0FFFF; /* 前景色即文字颜色 */
+    background-color:#0A102A; /*交替显示中的深色*/
+    alternate-background-color:#071341;/* 浅色 */
+}
+
+
+
+

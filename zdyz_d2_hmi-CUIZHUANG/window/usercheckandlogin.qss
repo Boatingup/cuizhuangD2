@@ -1,0 +1,18 @@
+﻿QWidget{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #FF223240, stop:1.0 #FF252E49, stop:0.326 #FF1E385D, stop:0.83 #FF3A578D);
+	}
+QLabel{
+        font:  #FFFFFF;
+        background-color: rgba(255, 255, 255, 0);
+        color: rgb(255,255,255);
+	}
+QLabel:hover{
+	   background-color:rgba(241,241,241,30);
+	}
+QLineEdit
+{
+    background: #f6f5ec;        /*背景颜色*/
+    border: 1px solid #208791;  /*边框宽度样式及颜色*/
+    color: #130c0e;             /*字体颜色*/
+    border-radius: 2;           /*倒角半径*/
+}
