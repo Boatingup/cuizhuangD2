@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<parameters>
+<block id="5" category="Internal_pra">
+        <subblock name="PressureSensor">
+            <element name="PressureSensor1">
+                <descriptor>压力传感器1</descriptor>
+		 <real_value>from</real_value>
+                <default_value>8</default_value>
+                <range_low>1</range_low>
+                <range_high>30</range_high>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="uwb_info">
+            <element name="uwb_set_distance">
+                <descriptor>uwb定位参数设置</descriptor>
+                <clock_rack_num>100</clock_rack_num>
+                <clock_distance>900</clock_distance>
+                <distance_between_rack>180</distance_between_rack>
+                <uint>mm</uint>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+        <subblock name="infrared_info">
+            <element name="infrared_pyroelectric_switch">
+                <descriptor>红外热释电开关</descriptor>
+                <real_value>0</real_value>
+                <default_value>0</default_value>
+                <range_set_num>2</range_set_num>
+                <range_set index="0">关闭</range_set>
+                <range_set index="1">打开</range_set>
+                <global>g_global</global>
+                <end>END</end>
+            </element>
+        </subblock>
+</block>
+</parameters>
+  

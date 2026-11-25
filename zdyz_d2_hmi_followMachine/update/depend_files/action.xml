@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<parameter name="动作列表">
+    <action name="移架">
+        <id>1</id>
+        <key>10</key>
+        <reg>1500</reg>
+        <bit>0</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>MOVE</actionname>
+        <autoregister>3200</autoregister>
+        <autooffsetlen>33</autooffsetlen>
+    </action>
+    <action name="推溜">
+        <id>2</id>
+        <key>20</key>
+        <reg>1500</reg>
+        <bit>1</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>PUSH_RAIL</actionname>
+        <autoregister>3000</autoregister>
+        <autooffsetlen>6</autooffsetlen>
+    </action>
+    <action name="升柱">
+        <id>3</id>
+        <key>5</key>
+        <reg>1500</reg>
+        <bit>4</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>LIFT</actionname>
+        <autoregister>3200</autoregister>
+        <autooffsetlen>75</autooffsetlen>
+    </action>
+    <action name="降柱">
+        <id>4</id>
+        <key>6</key>
+        <reg>1500</reg>
+        <bit>5</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>DOWN</actionname>
+        <autoregister>3200</autoregister>
+        <autooffsetlen>75</autooffsetlen>
+    </action>
+    <action name="伸平衡">
+        <id>25</id>
+        <key>0</key>
+        <reg>1500</reg>
+        <bit>2</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>STRETCH_BALANCE</actionname>
+        <autoregister>3200</autoregister>
+        <autooffsetlen>75</autooffsetlen>
+    </action>
+    <action name="收平衡">
+        <id>26</id>
+        <key>1</key>
+        <reg>1500</reg>
+        <bit>3</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>TAKE_BACK_BALANCE</actionname>
+        <autoregister>3200</autoregister>
+        <autooffsetlen>75</autooffsetlen>
+    </action>
+    <action name="伸伸缩梁">
+        <id>11</id>
+        <key>3</key>
+        <reg>1500</reg>
+        <bit>0</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>STRETCH_TELESCOPIC_GIRDER</actionname>
+        <autoregister>3060</autoregister>
+        <autooffsetlen>2</autooffsetlen>
+    </action>
+    <action name="收伸缩梁">
+        <id>12</id>
+        <key>8</key>
+        <reg>1500</reg>
+        <bit>0</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>TAKE_BACK_TELESCOPIC_GIRDER</actionname>
+        <autoregister>3080</autoregister>
+        <autooffsetlen>2</autooffsetlen>
+    </action>
+    <action name="伸侧护">
+        <id>7</id>
+        <key>15</key>
+        <reg>1500</reg>
+        <bit>14</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>STRETCH_SIDE_GURAD</actionname>
+        <autoregister>3200</autoregister>
+        <autooffsetlen>75</autooffsetlen>
+    </action>
+    <action name="收侧护">
+        <id>8</id>
+        <key>16</key>
+        <reg>1500</reg>
+        <bit>15</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>CONTRACT_SIDE_GURAD</actionname>
+        <autoregister>3200</autoregister>
+        <autooffsetlen>75</autooffsetlen>
+    </action>
+    <action name="伸插板">
+        <id>115</id>
+        <key>4</key>
+        <reg>1500</reg>
+        <bit>10</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>STRETCH_PLUGBOARD</actionname>
+        <autoregister>3200</autoregister>
+        <autooffsetlen>75</autooffsetlen>
+    </action>
+    <action name="收插板">
+        <id>16</id>
+        <key>9</key>
+        <reg>1500</reg>
+        <bit>11</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>CONTRACT_PLUGBOARD</actionname>
+        <autoregister>3200</autoregister>
+        <autooffsetlen>75</autooffsetlen>
+    </action>
+    <action name="抬底">
+        <id>21</id>
+        <key>11</key>
+        <reg>1500</reg>
+        <bit>0</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>LIFT_BOTTOM</actionname>
+        <autoregister>3200</autoregister>
+        <autooffsetlen>75</autooffsetlen>
+    </action>
+    <action name="喷雾">
+        <id>22</id>
+        <key>21</key>
+        <reg>1500</reg>
+        <bit>1</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>SPRAY</actionname>
+        <autoregister>3100</autoregister>
+        <autooffsetlen>1</autooffsetlen>
+    </action>
+    <action name="前喷雾">
+        <id>105</id>
+        <key>105</key>
+        <reg>1500</reg>
+        <bit>1</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>BEFORE_SPRAY</actionname>
+        <autoregister>3100</autoregister>
+        <autooffsetlen>1</autooffsetlen>
+    </action>
+    <action name="后喷雾">
+        <id>106</id>
+        <key>106</key>
+        <reg>1500</reg>
+        <bit>1</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>AFTER_SPRAY</actionname>
+        <autoregister>3120</autoregister>
+        <autooffsetlen>1</autooffsetlen>
+    </action>
+    <action name="拉后溜">
+        <id>107</id>
+        <key>107</key>
+        <reg>1500</reg>
+        <bit>1</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>CONTRACT_F_PUSH_RAIL</actionname>
+        <autoregister>3140</autoregister>
+        <autooffsetlen>2</autooffsetlen>
+    </action>
+    <action name="伸后溜">
+        <id>108</id>
+        <key>108</key>
+        <reg>1500</reg>
+        <bit>1</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>STRETCH_F_PUSH_RAIL</actionname>
+        <autoregister>3160</autoregister>
+        <autooffsetlen>2</autooffsetlen>
+    </action>
+    <action name="反冲洗">
+        <id>109</id>
+        <key>109</key>
+        <reg>1500</reg>
+        <bit>1</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>BACK_FLUSH</actionname>
+        <autoregister>3180</autoregister>
+        <autooffsetlen>4</autooffsetlen>
+    </action>
+    <action name="自动放煤">
+        <id>112</id>
+        <key>112</key>
+        <reg>1500</reg>
+        <bit>1</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>AUTO_COAL</actionname>
+        <autoregister>3320</autoregister>
+        <autooffsetlen>10</autooffsetlen>
+    </action>
+    <action name="一键回位">
+        <id>113</id>
+        <key>113</key>
+        <reg>1500</reg>
+        <bit>1</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>RESET</actionname>
+        <autoregister>3340</autoregister>
+        <autooffsetlen>2</autooffsetlen>
+    </action>
+    <action name="记忆放煤">
+        <id>114</id>
+        <key>114</key>
+        <reg>1500</reg>
+        <bit>1</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>MEMORY_COAL</actionname>
+        <autoregister>3360</autoregister>
+        <autooffsetlen>5</autooffsetlen>
+    </action>
+    <action name="自动补压">
+        <id>111</id>
+        <key>111</key>
+        <reg>1500</reg>
+        <bit>1</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>AUTO_AFTERCOMPACTION</actionname>
+        <autoregister>3300</autoregister>
+        <autooffsetlen>6</autooffsetlen>
+    </action>
+    <action name="上反冲">
+        <id>31</id>
+        <key>114</key>
+        <reg>1500</reg>
+        <bit>1</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>MEMORY_COAL</actionname>
+        <autoregister>3360</autoregister>
+        <autooffsetlen>5</autooffsetlen>
+    </action>
+    <action name="下反冲">
+        <id>32</id>
+        <key>111</key>
+        <reg>1500</reg>
+        <bit>1</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>AUTO_AFTERCOMPACTION</actionname>
+        <autoregister>3300</autoregister>
+        <autooffsetlen>6</autooffsetlen>
+    </action>
+    <action name="降柱抬底">
+        <id>56</id>
+        <key>2</key>
+        <reg>1500</reg>
+        <bit>1</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>MEMORY_COAL</actionname>
+        <autoregister>3360</autoregister>
+        <autooffsetlen>5</autooffsetlen>
+    </action>
+    <action name="移架抬底">
+        <id>57</id>
+        <key>7</key>
+        <reg>1500</reg>
+        <bit>1</bit>
+        <combinednum>1</combinednum>
+        <sbcnumber>0</sbcnumber>
+        <actionname>AUTO_AFTERCOMPACTION</actionname>
+        <autoregister>3300</autoregister>
+        <autooffsetlen>6</autooffsetlen>
+    </action>
+</parameter>

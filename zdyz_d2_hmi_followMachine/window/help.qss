@@ -1,0 +1,43 @@
+QDialog
+{
+	background: #0A102A;        /*背景颜色*/
+}
+/*常规状态*/
+QTextEdit
+{
+    background: #0A102A;      /*背景颜色*/
+    border: 1px solid #208791;  /*边框宽度样式及颜色*/
+    color: #ffffff;             /*字体颜色*/
+}
+/*获取焦点*/
+QTextEdit:focus
+{
+    border: 1px solid #50b7c1;  /*边框宽度样式及颜色*/
+    //color: #130c0e;             /*字体颜色*/
+}
+/*鼠标滑过*/
+QTextEdit:hover
+{
+    border: 1px solid #50b7c1;  /*边框宽度样式及颜色*/
+}
+
+
+/*常规状态*/
+QGroupBox
+{
+
+    border: 1px solid #ffffff;  /*边框宽度样式及颜色*/
+    color: #ffffff;             /*字体颜色*/
+    margin: 2.0ex 0ex 0ex 0ex;  /*文字在方框中位置的偏离度*/
+}
+/*标题位置*/
+QGroupBox::title
+{
+    color: #ffffff;             /*字体颜色*/
+
+    subcontrol-origin: margin;
+    subcontrol-position: top left;  /*标题位置*/
+    left:20px;                      /*标题相对与左边框位置*/
+    padding:0 2px;                  /*参数1.往下偏移，参数2.标题与边框的间距*/
+}
+

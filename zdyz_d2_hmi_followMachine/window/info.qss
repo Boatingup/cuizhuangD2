@@ -1,0 +1,20 @@
+QWidget
+{
+    background-color:#0A102A;
+
+}
+
+QLabel
+{
+    color:white;/* 前景色,可以写#808080 */
+    font:36pt; /* 字号 */
+}
+
+QLabel#label_title,#label_info
+{
+    color:white;/* 前景色,可以写#808080 */
+    font:18pt; /* 字号 */
+}
+
+
+

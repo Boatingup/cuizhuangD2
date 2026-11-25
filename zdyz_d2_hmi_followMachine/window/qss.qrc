@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/qss">
+        <file>leftpane.qss</file>
+        <file>mainpage.qss</file>
+        <file>menupage.qss</file>
+        <file>stoplockpage.qss</file>
+        <file>update_page.qss</file>
+        <file>manual_address.qss</file>
+        <file>parameter_config.qss</file>
+        <file>Controlled_action_page.qss</file>
+        <file>actionconfig.qss</file>
+        <file>action_set.qss</file>
+        <file>workingfaceupdate.qss</file>
+        <file>set_time.qss</file>
+        <file>usercheckandlogin.qss</file>
+        <file>run_error.qss</file>
+        <file>privatedata.ini</file>
+        <file>goal.position</file>
+        <file>help.qss</file>
+        <file>info.qss</file>
+        <file>auxiliarymenu.qss</file>
+        <file>fault_display.qss</file>
+        <file>driver_chn_config.qss</file>
+        <file>driver_chn_set.qss</file>
+        <file>port_visualization.qss</file>
+        <file>combin.qss</file>
+    </qresource>
+</RCC>

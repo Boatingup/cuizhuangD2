@@ -1,0 +1,43 @@
+{
+    "Direction": 2,
+    "InfraredFilter": 5,
+    "Length": 9,
+    "Stages": [
+        {
+            "Actions": [
+                {
+                    "ActionNum": 2,
+                    "CtrlDirection": -1,
+                    "CtrlDistance": 10,
+                    "CtrlRange": 7,
+                    "RangeMax": 104,
+                    "RangeMin": 6,
+                    "SortNum": 1,
+                    "TriggerPoint": 11
+                }
+            ],
+            "EndSupport": 104,
+            "SortNum": 1,
+            "StartSupport": 6
+        },
+        {
+            "Actions": [
+                {
+                    "ActionNum": 1,
+                    "CtrlDirection": 1,
+                    "CtrlDistance": -8,
+                    "CtrlRange": 5,
+                    "RangeMax": 120,
+                    "RangeMin": 105,
+                    "SortNum": 1,
+                    "TriggerPoint": 105
+                }
+            ],
+            "EndSupport": 120,
+            "SortNum": 2,
+            "StartSupport": 105
+        }
+    ],
+    "StopTime": 20,
+    "Type": 1
+}

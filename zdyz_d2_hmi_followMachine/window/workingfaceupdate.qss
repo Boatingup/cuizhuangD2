@@ -1,0 +1,18 @@
+﻿QWidget
+{
+    background-color:#0A102A;
+
+}
+
+QLabel
+{
+    color:#808080;/* 前景色,可以写white */
+    /*background:transparent;*/
+    font:7pt; /* 字号 */
+    margin:0px;/* 外边距 */
+}
+
+
+
+
+

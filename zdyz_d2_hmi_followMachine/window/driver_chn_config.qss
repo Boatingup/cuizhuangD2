@@ -1,0 +1,125 @@
+﻿QWidget#driver_chn_config
+{
+    background-color:#0A102A;
+
+}
+
+QLabel#title_label
+{
+    color:#808080;/* 前景色,可以写white */
+    /*background:transparent;*/
+    font:20pt; /* 字号 */
+    margin:6px;/* 外边距 */
+}
+
+QHeaderView
+{
+    background:#00297F;
+    border:none;
+    color: white;
+
+}
+
+QTableView{
+    border:none;
+    color:#E0FFFF; /* 前景色即文字颜色 */
+    background-color:#0A102A; /*交替显示中的深色*/
+    alternate-background-color:#071341;/* 浅色 */
+}
+
+QTabWidget::tab-bar{
+        border-width:0px;
+        alignment:left;
+        }
+
+QTabBar::tab{
+        border-bottom-color:#8A2BE2;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 15px;
+        min-width:100px;
+        min-height:20px;
+        color: rgb(255,255,255);
+        background-color:#4169E1;
+        font:18px #FFFFFF;
+        padding: 0px;
+        }
+
+QTabBar::tab:!selected {
+        margin-top: 5px;
+        }
+
+QTabBar::tab:selected {
+        color: yellow;
+        background-color: #00297F;
+        }
+
+/*
+QScrollBar:vertical {
+    border: 0px;
+    background:rgba(255,255,255,0);
+    width: 5px;
+    margin: 22px 0  22px 0;
+}
+*/
+
+
+
+
+/*
+
+QWidget{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #FF223240, stop:1.0 #FF252E49, stop:0.326 #FF1E385D, stop:0.83 #FF3A578D);
+        }
+
+QTabWidget::tab-bar{
+    border-width:0px;
+    alignment:center;
+    }
+
+QTabBar::tab{
+    border-bottom-color:#8A2BE2;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 15px;
+    min-width:100px;
+    min-height:25px;
+    color: rgb(255,255,255);
+    background-color:#4169E1;
+    font:20px #FFFFFF;
+    padding: 0px;
+    }
+
+QTabBar::tab:!selected {
+    margin-top: 5px;
+    }
+
+QTabBar::tab:selected {
+    background-color: #00BFFF;
+    }
+QTableView {
+    color: white;
+    font:20px #FFFFFF;
+    gridline-color: black;
+    background-color: rgba(123,104,238,0);
+    selection-color: white;
+    selection-background-color: rgb(106,90,205);
+    border: 2px groove gray;
+    border-radius: 0px;
+    padding: 2px 4px;
+}
+
+QHeaderView {
+    color: black;
+    font:20px #FFFFFF;
+    background-color: rgb(123,104,238);
+    border: 0px solid rgb(144, 144, 144);
+    border:0px solid rgb(191,191,191);
+    border-left-color: rgba(255, 255, 255, 0);
+    border-top-color: rgba(255, 255, 255, 0);
+    border-radius:0px;
+    min-height:29px;
+}
+
+*/
+
+
+

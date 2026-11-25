@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/config">
+        <file>follow_action_map.json</file>
+    </qresource>
+</RCC>

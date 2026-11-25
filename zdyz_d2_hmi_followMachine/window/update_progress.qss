@@ -1,0 +1,39 @@
+﻿QWidget
+{
+    background-color:#0A102A;
+
+}
+
+QLabel
+{
+    color:#808080;/* 前景色,可以写white */
+    /*background:transparent;*/
+    font:20pt; /* 字号 */
+    margin:6px;/* 外边距 */
+}
+
+﻿QWidget
+{
+    background-color:#0A102A;
+
+}
+
+
+/*常规状态*/
+QProgressBar
+{
+    background: #005761;        /*背景颜色*/
+    border: 0px solid #ff0000;  /*边框宽度样式及颜色*/
+    border-radius: 4;           /*边框圆角半径*/
+    color: #f6f5ec;             /*字体颜色*/
+    margin-right: 0px;          /*右外边距*/
+    text-align: center;         /*文本位置*/
+}
+
+QProgressBar::chunk
+{
+    background: #50b7c1;    /*背景颜色*/
+    border-radius: 2;       /*边框圆角半径*/
+    width:5px;              /*每格宽度*/
+    margin:0.5px;           /*间距*/
+}

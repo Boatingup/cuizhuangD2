@@ -1,0 +1,21 @@
+﻿QWidget
+{
+    background-color:#205D5F;
+
+}
+
+QLabel
+{
+    color:#FFC700;/* 前景色,可以写white */
+    /*background:transparent;*/
+    font:20pt; /* 字号 */
+    margin:6px;/* 外边距 */
+}
+
+
+
+QDateTimeEdit
+{
+    border: 2px solid #208791;  /*边框宽度样式及颜色*/
+    color:#FFC700;              /*文本颜色*/
+}

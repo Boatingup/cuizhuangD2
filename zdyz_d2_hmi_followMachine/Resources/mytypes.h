@@ -1,0 +1,14 @@
+#ifndef MYTYPES_H
+#define MYTYPES_H
+
+typedef unsigned char       uint8_t;
+typedef unsigned short int  uint16_t;
+typedef unsigned int        uint32_t;
+
+//typedef char                int8_t;
+//typedef short int           int16_t;
+//typedef int                 int32_t;
+
+
+
+#endif // MYTYPES_H
